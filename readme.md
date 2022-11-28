@@ -1,4 +1,4 @@
-# laravStart
+# laravelAndVue
 Starter Admin For Laravel. This repo is based on practical web application development course on youtube. You can watch the videos on how we make this project or just git clone the project and start using. it. 
 
 
