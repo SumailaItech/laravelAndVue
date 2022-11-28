@@ -35,6 +35,7 @@ It's just like any other Laravel project. Basically here is how you use it for y
 * Run ` php artisan key:generate` to generate the app key
 * Run ` npm install ` 
 * Run ` php artisan migrate ` 
+* Run ` php artisan passport:install ` 
 * Done !!! Enjoy Customizing and building awesome app 
 
 
