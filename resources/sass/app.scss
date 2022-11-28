@@ -23,3 +23,19 @@ $fa-font-path: "../webfonts";
   background-color: #212529 !important;
   color:  #fff !important;
 }
+
+.navbar-search-block {
+  position: absolute;
+  padding: 0 1rem;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: none;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background-color: initial;
+}

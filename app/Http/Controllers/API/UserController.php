@@ -29,7 +29,7 @@ class UserCOntroller extends Controller
     public function index()
     {
         $this->authorize('isAdmin');
-        return User::latest()->paginate(2);
+        return User::latest()->paginate(20);
     }
 
     /**
@@ -158,5 +158,27 @@ class UserCOntroller extends Controller
         $user -> delete();
 
         return ['message' => 'User deleted successfully'];
+    }
+
+    /**
+     * Search the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function search()
+    {
+        $this->authorize('isAdmin');
+        if($search = \Request::get('q')) {
+            $users = User::where(function($query) use($search) {
+                $query->where('name','LIKE',"%$search%")
+                ->orWhere('email','LIKE',"%$search%")
+                ->orWhere('type','LIKE',"%$search%");
+            })->paginate(20);
+        } else {
+            $users = User::latest()->paginate(20);
+        }
+
+        return $users;
     }
 }

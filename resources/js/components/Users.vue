@@ -315,6 +315,16 @@ export default {
   },
 
   created() {
+    Fire.$on('searching', ()=> {
+        let query = this.$parent.search;
+        axios.get('api/findUser?q=' + query)
+        .then((data)=>{
+          this.users = data.data
+        })
+        .catch(()=>{
+          Swal('Failed','There was something wrong.','warning')
+        });
+    });
     this.loadUsers();
     Fire.$on("DataChange", () => {
       this.loadUsers();

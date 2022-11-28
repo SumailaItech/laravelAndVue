@@ -74296,3 +74296,17 @@ readers do not read off random characters that represent icons */
   color: #fff !important;
 }
 
+.navbar-search-block {
+  position: absolute;
+  padding: 0 1rem;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  background-color: initial;
+}
+
